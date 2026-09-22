@@ -1,59 +1,123 @@
-# Problems Encountered
+# Problems Identified and Proposed Solutions
 
-## Problem 1 – Requirement Identification
-
-Some requirements were unclear during the initial stage of the project.
-
-### Solution
-
-The requirements were reviewed and the major system features were finalized.
+The following problems were identified during the analysis and design of the proposed Online Cinema Ticket Booking Management System. Since this project is an assignment and does not include a working implementation, these are proposed problems and solutions rather than actual software defects.
 
 ---
 
-## Problem 2 – Database Design
+## Problem 1 – Seat Availability
 
-Difficulty was encountered while establishing relationships between movies, theatres, shows, seats and bookings.
+### Problem
 
-### Solution
+A user may try to select a seat that has already been booked for the selected movie show.
 
-The database structure was reviewed and appropriate relationships were established.
+### Proposed Solution
+
+The system should check the availability status of each seat before confirming the booking. Seats that are already booked should be displayed as unavailable and should not be selectable.
+
+### Related Test Case
+
+TC07 – Booked Seat
+
+### Status
+
+Identified – Solution Proposed
 
 ---
 
-## Problem 3 – Seat Availability
+## Problem 2 – Invalid Booking Details
 
-Difficulty was encountered in maintaining real-time seat availability after a booking.
+### Problem
 
-### Solution
+A user may attempt to book a ticket without providing all the required booking information.
 
-The seat status was designed to change according to the booking status.
+### Proposed Solution
+
+The system should validate the booking details before confirmation. If any required information is missing or invalid, an appropriate validation message should be displayed.
+
+### Related Test Case
+
+TC12 – Invalid Booking
+
+### Status
+
+Identified – Solution Proposed
 
 ---
 
-## Problem 4 – Booking Validation
+## Problem 3 – Conflicting Show Timings
 
-The system needed to prevent users from booking already reserved seats.
+### Problem
 
-### Solution
+Two shows may be scheduled for the same screen at overlapping times.
 
-Seat availability was checked before confirming a booking.
+### Proposed Solution
+
+The system should check the existing show schedule before adding a new show. Conflicting show timings should not be allowed for the same screen.
+
+### Related Test Case
+
+TC13 – Show Timing
+
+### Status
+
+Identified – Solution Proposed
+
+---
+
+## Problem 4 – Invalid Data
+
+### Problem
+
+Users or administrators may enter invalid or incomplete information into the system.
+
+### Proposed Solution
+
+Input validation should be applied to important fields such as names, email addresses, dates, show timings and other required information. Invalid data should generate appropriate error messages.
+
+### Related Test Case
+
+TC14 – Database Validation
+
+### Status
+
+Identified – Solution Proposed
 
 ---
 
 ## Problem 5 – Payment Validation
 
-Invalid or incomplete payment information could cause booking errors.
+### Problem
 
-### Solution
+Incorrect or incomplete payment information may be entered during ticket booking.
 
-Input validation was added before confirming the ticket booking.
+### Proposed Solution
+
+The system should validate the required payment information before confirming the booking. The ticket should only be confirmed after successful payment processing.
+
+### Related Test Case
+
+TC09 – Payment
+
+### Status
+
+Identified – Solution Proposed
 
 ---
 
-## Problem 6 – Show Timing
+## Problem 6 – Duplicate Booking
 
-Difficulty was encountered while displaying available shows according to the selected movie and theatre.
+### Problem
 
-### Solution
+A user may attempt to book the same seat more than once for the same movie show.
 
-Movie, theatre and show-time relationships were properly defined in the database.
+### Proposed Solution
+
+The system should verify seat availability immediately before confirming the booking and prevent duplicate seat reservations.
+
+### Related Test Case
+
+TC07 – Booked Seat
+
+### Status
+
+Identified – Solution Proposed
